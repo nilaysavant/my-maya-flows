@@ -1,0 +1,575 @@
+[
+  {
+    "id": "619d147b.6d0aac",
+    "type": "tab",
+    "label": "Flow 1",
+    "disabled": false,
+    "info": "",
+    "_def": {
+      "defaults": {
+        "label": {
+          "value": ""
+        },
+        "disabled": {
+          "value": false
+        },
+        "info": {
+          "value": ""
+        }
+      }
+    },
+    "in": [],
+    "out": [],
+    "changed": false,
+    "module": null,
+    "version": null
+  },
+  {
+    "valid": true,
+    "id": "d50699537d04beb9",
+    "type": "reddit-credentials",
+    "username": "blackberrycitylights",
+    "user_agent": "blackberrycitylights",
+    "auth_type": "username_password",
+    "name": "blackberrycitylights reddit acc",
+    "module": "node-red-contrib-node-reddit",
+    "version": "1.0.11"
+  },
+  {
+    "valid": true,
+    "id": "ccb12590b1448183",
+    "type": "inject",
+    "z": "619d147b.6d0aac",
+    "name": "Main Scraper",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payloadType": "date",
+    "x": 163.03954855940327,
+    "y": 126.58694841273095,
+    "wires": [
+      [
+        "baab6c4347f96fbf",
+        "764f5b186a082d91"
+      ]
+    ],
+    "module": "node-red",
+    "version": "2.0.6-git"
+  },
+  {
+    "valid": true,
+    "id": "baab6c4347f96fbf",
+    "type": "debug",
+    "z": "619d147b.6d0aac",
+    "d": true,
+    "name": "Start",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 393.27637448311566,
+    "y": 125.68852548874608,
+    "wires": [],
+    "module": "node-red",
+    "version": "2.0.6-git"
+  },
+  {
+    "valid": true,
+    "id": "764f5b186a082d91",
+    "type": "search",
+    "z": "619d147b.6d0aac",
+    "name": "",
+    "reddit": "d50699537d04beb9",
+    "subreddit": "r/IndianGaming",
+    "query": "gpu buy",
+    "time": "month",
+    "sort": "relevance",
+    "x": 291.9525885073184,
+    "y": 229.35855522474685,
+    "wires": [
+      [
+        "698a1aef0d7a1c9d",
+        "bd676b89f00c249b"
+      ]
+    ],
+    "module": "node-red-contrib-node-reddit",
+    "version": "1.0.11"
+  },
+  {
+    "valid": true,
+    "id": "698a1aef0d7a1c9d",
+    "type": "debug",
+    "z": "619d147b.6d0aac",
+    "d": true,
+    "name": "Search debug",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 471.8170670269076,
+    "y": 232.7019362070841,
+    "wires": [],
+    "module": "node-red",
+    "version": "2.0.6-git"
+  },
+  {
+    "valid": true,
+    "id": "32e98125037bd270",
+    "type": "get",
+    "z": "619d147b.6d0aac",
+    "name": "",
+    "reddit": "d50699537d04beb9",
+    "content_type": "submission",
+    "submission_source": "id",
+    "comment_source": "submission",
+    "pm_source": "inbox",
+    "content_source": "saved",
+    "subreddit": "",
+    "user": "",
+    "limit": "",
+    "sort": "hot",
+    "time": "hour",
+    "fetch_all": "false",
+    "submission": "",
+    "depth": "",
+    "content_id": "vgihpu",
+    "x": 700.7307176465986,
+    "y": -101.36904078848488,
+    "wires": [
+      [
+        "9e5ba91bf6fdd50e"
+      ]
+    ],
+    "module": "node-red-contrib-node-reddit",
+    "version": "1.0.11"
+  },
+  {
+    "valid": true,
+    "id": "333962d8fbc9a1ff",
+    "type": "inject",
+    "z": "619d147b.6d0aac",
+    "name": "Test dummy get submission by content id",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payloadType": "date",
+    "x": 151.69533921330856,
+    "y": -102.81290664825292,
+    "wires": [
+      [
+        "32e98125037bd270",
+        "b73923d1fb6e43ad"
+      ]
+    ],
+    "module": "node-red",
+    "version": "2.0.6-git"
+  },
+  {
+    "valid": true,
+    "id": "b73923d1fb6e43ad,
+    "type": "debug",
+    "z": "619d147b.6d0aac",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "false",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 543.5782118732021,
+    "y": -171.51468616758723,
+    "wires": [],
+    "module": "node-red",
+    "version": "2.0.6-git"
+  },
+  {
+    "valid": true,
+    "id": "9e5ba91bf6fdd50e",
+    "type": "debug",
+    "z": "619d147b.6d0aac",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "false",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 924.5283595447979,
+    "y": -175.70502511948376,
+    "wires": [],
+    "module": "node-red",
+    "version": "2.0.6-git"
+  },
+  {
+    "valid": true,
+    "id": "bd676b89f00c249b",
+    "type": "get",
+    "z": "619d147b.6d0aac",
+    "name": "",
+    "reddit": "d50699537d04beb9",
+    "content_type": "submission",
+    "submission_source": "id",
+    "comment_source": "subreddit",
+    "pm_source": "inbox",
+    "content_source": "saved",
+    "subreddit": "",
+    "user": "",
+    "limit": "",
+    "sort": "hot",
+    "time": "hour",
+    "fetch_all": "false",
+    "submission": "",
+    "depth": "",
+    "content_id": "{{payload.id}}",
+    "x": 336.0461906459243,
+    "y": 329.2174335228635,
+    "wires": [
+      [
+        "e5682b0551c1e796",
+        "ceb0812dfb4fd80a"
+      ]
+    ],
+    "module": "node-red-contrib-node-reddit",
+    "version": "1.0.11"
+  },
+  {
+    "valid": true,
+    "id": "e5682b0551c1e796",
+    "type": "debug",
+    "z": "619d147b.6d0aac",
+    "d": true,
+    "name": "Get submission debug",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 509.68842596100046,
+    "y": 329.95949106765573,
+    "wires": [],
+    "module": "node-red",
+    "version": "2.0.6-git"
+  },
+  {
+    "valid": true,
+    "id": "ceb0812dfb4fd80a",
+    "type": "function",
+    "z": "619d147b.6d0aac",
+    "name": "Get Comment bodies with links",
+    "func": "const commentsWithLinks = msg.payload.comments.filter((c)=> c.body_html.includes(\"<a href=\"))\nmsg.payload = commentsWithLinks.map((c)=> c.body_html)\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 353.5115624369845,
+    "y": 442.16717513555926,
+    "wires": [
+      [
+        "604cb75c9a2bb05c",
+        "37f023bc0fff420b"
+      ]
+    ],
+    "module": "node-red",
+    "version": "2.0.6-git"
+  },
+  {
+    "valid": true,
+    "id": "604cb75c9a2bb05c",
+    "type": "debug",
+    "z": "619d147b.6d0aac",
+    "d": true,
+    "name": "debug comments  with links",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 729.765315059263,
+    "y": 435.34484571593964,
+    "wires": [],
+    "module": "node-red",
+    "version": "2.0.6-git"
+  },
+  {
+    "valid": true,
+    "id": "ad00c28cbdb3448c",
+    "type": "html",
+    "z": "619d147b.6d0aac",
+    "name": "Extract Link tags",
+    "property": "payload",
+    "outproperty": "payload",
+    "tag": "a",
+    "ret": "attr",
+    "as": "single",
+    "x": 532.113079806639,
+    "y": 669.1580268881648,
+    "wires": [
+      [
+        "649979fd474b8589",
+        "39ccedacb7631d03"
+      ]
+    ],
+    "module": "node-red",
+    "version": "2.0.6-git"
+  },
+  {
+    "valid": true,
+    "id": "37f023bc0fff420b",
+    "type": "split",
+    "z": "619d147b.6d0aac",
+    "name": "",
+    "splt": "\\n",
+    "spltType": "str",
+    "arraySplt": 1,
+    "arraySpltType": "len",
+    "stream": false,
+    "addname": "",
+    "x": 556.3407841312131,
+    "y": 546.6360763019104,
+    "wires": [
+      [
+        "e5f5d5623906e422",
+        "ad00c28cbdb3448c"
+      ]
+    ],
+    "module": "node-red",
+    "version": "2.0.6-git"
+  },
+  {
+    "valid": true,
+    "id": "e5f5d5623906e422",
+    "type": "debug",
+    "z": "619d147b.6d0aac",
+    "d": true,
+    "name": "debug html array split into individual msgs",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 771.6253183509357,
+    "y": 545.9878288154171,
+    "wires": [],
+    "module": "node-red",
+    "version": "2.0.6-git"
+  },
+  {
+    "valid": true,
+    "id": "649979fd474b8589",
+    "type": "debug",
+    "z": "619d147b.6d0aac",
+    "d": true,
+    "name": "debug link tag extract html ",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 823.8116443499631,
+    "y": 667.9983954817113,
+    "wires": [],
+    "module": "node-red",
+    "version": "2.0.6-git"
+  },
+  {
+    "valid": true,
+    "id": "39ccedacb7631d03",
+    "type": "function",
+    "z": "619d147b.6d0aac",
+    "name": "Get valid links from extracted link tags",
+    "func": "\nconst blackList = [\n    \"https://www.reddit.com\",\n    \"https://discord.gg\",\n    \"https://imgur.com\",\n]\n\nconst validLinks = msg.payload\n        .map((linkTag)=> linkTag.href)\n        .filter((link)=> link.startsWith(\"https\") \n        && !blackList.some(b=> link.startsWith(b))\n        )\nmsg.payload = validLinks\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 606.1664800443147,
+    "y": 759.4223041060917,
+    "wires": [
+      [
+        "aa678835f3d59f6f",
+        "e4612b305664c036"
+      ]
+    ],
+    "module": "node-red",
+    "version": "2.0.6-git"
+  },
+  {
+    "valid": true,
+    "id": "aa678835f3d59f6f",
+    "type": "debug",
+    "z": "619d147b.6d0aac",
+    "name": "Get valid  links debug",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 1080,
+    "y": 760,
+    "wires": [],
+    "module": "node-red",
+    "version": "2.0.6-git"
+  },
+  {
+    "valid": true,
+    "id": "e4612b305664c036",
+    "type": "split",
+    "z": "619d147b.6d0aac",
+    "name": "",
+    "splt": "\\n",
+    "spltType": "str",
+    "arraySplt": 1,
+    "arraySpltType": "len",
+    "stream": false,
+    "addname": "",
+    "x": 750,
+    "y": 860,
+    "wires": [
+      [
+        "b52854d7fe2a729a"
+      ]
+    ],
+    "module": "node-red",
+    "version": "2.0.6-git"
+  },
+  {
+    "valid": true,
+    "id": "fce6dbe701e53869",
+    "type": "notion-create-page",
+    "z": "619d147b.6d0aac",
+    "name": "Add links to notion",
+    "isProfileConfigNode": false,
+    "url": "https://www.notion.so/20e380f1496d4ead848310660f1ad7cb?v=620e3bdf6e674eeabd28410474841b3f",
+    "payloadTypeurl": "str",
+    "parent_type": "database",
+    "properties": "payload",
+    "payloadTypeproperties": "msg",
+    "children": "{}",
+    "payloadTypechildren": "json",
+    "icon": "{}",
+    "payloadTypeicon": "json",
+    "cover": "{}",
+    "payloadTypecover": "json",
+    "x": 965,
+    "y": 1032,
+    "wires": [
+      [
+        "5dff65c1fe6df62b"
+      ]
+    ],
+    "module": "maya-red-notion",
+    "version": "0.0.1"
+  },
+  {
+    "valid": true,
+    "id": "b52854d7fe2a729a",
+    "type": "function",
+    "z": "619d147b.6d0aac",
+    "name": "",
+    "func": "const json = {\n    Name: {\n        \"title\": [\n            {\n                \"type\": \"text\",\n                \"text\": {\n                    \"content\": \"tss\"\n                }\n            }\n        ]\n    },\n}\n\nmsg.payload = json\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 837,
+    "y": 934,
+    "wires": [
+      [
+        "fce6dbe701e53869",
+        "f7f5181b98ed572c"
+      ]
+    ],
+    "module": "node-red",
+    "version": "2.0.6-git"
+  },
+  {
+    "valid": true,
+    "id": "f7f5181b98ed572c",
+    "type": "debug",
+    "z": "619d147b.6d0aac",
+    "name": "Get JSON",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 1220,
+    "y": 915,
+    "wires": [],
+    "module": "node-red",
+    "version": "2.0.6-git"
+  },
+  {
+    "valid": true,
+    "id": "5dff65c1fe6df62b",
+    "type": "debug",
+    "z": "619d147b.6d0aac",
+    "name": "TEST",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "true",
+    "targetType": "full",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 1210,
+    "y": 1040,
+    "wires": [],
+    "module": "node-red",
+    "version": "2.0.6-git"
+  }
+]
