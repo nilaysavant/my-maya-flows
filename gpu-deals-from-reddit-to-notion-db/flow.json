@@ -5,19 +5,6 @@
     "label": "Flow 1",
     "disabled": false,
     "info": "",
-    "_def": {
-      "defaults": {
-        "label": {
-          "value": ""
-        },
-        "disabled": {
-          "value": false
-        },
-        "info": {
-          "value": ""
-        }
-      }
-    },
     "in": [],
     "out": [],
     "changed": false,
