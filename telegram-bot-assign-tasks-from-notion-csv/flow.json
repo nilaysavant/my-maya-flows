@@ -28,6 +28,36 @@
   },
   {
     "valid": true,
+    "id": "ac8ebef63468ba65",
+    "type": "notion-create-page",
+    "z": "o6uuY9HAzarFwBP4",
+    "name": "Create/Register User",
+    "isProfileConfigNode": false,
+    "url": "https://www.notion.so/a5ab0fcc36eb4e7bb134dbb6bd60962d?v=cfc06e6f3ec948b18448a9dff0a50171",
+    "payloadTypeurl": "str",
+    "parent_type": "database",
+    "properties": "notionPage",
+    "payloadTypeproperties": "msg",
+    "children": "{}",
+    "payloadTypechildren": "json",
+    "icon": "{}",
+    "payloadTypeicon": "json",
+    "cover": "{}",
+    "payloadTypecover": "json",
+    "x": 905,
+    "y": 725,
+    "wires": [
+      [
+        "530f363a790707be"
+      ]
+    ],
+    "color": "#674C80",
+    "darkColor": "#553C6B",
+    "module": "maya-red-notion",
+    "version": "0.0.1"
+  },
+  {
+    "valid": true,
     "id": "11349f49eef86518",
     "type": "function",
     "z": "o6uuY9HAzarFwBP4",
@@ -46,8 +76,8 @@
         "fd1a1e36dba04c71"
       ]
     ],
-    "color": "#619259",
-    "darkColor": "#4F7C48",
+    "color": "#808080",
+    "darkColor": "#6A6A6A",
     "module": "node-red",
     "version": "2.0.6-git"
   },
@@ -68,8 +98,8 @@
     "x": 785,
     "y": -250,
     "wires": [],
-    "color": "#808080",
-    "darkColor": "#6A6A6A",
+    "color": "#674C80",
+    "darkColor": "#553C6B",
     "module": "node-red",
     "version": "2.0.6-git"
   },
@@ -93,8 +123,8 @@
         "b2e351fa25f44343"
       ]
     ],
-    "color": "#808080",
-    "darkColor": "#6A6A6A",
+    "color": "#674C80",
+    "darkColor": "#553C6B",
     "module": "node-red",
     "version": "2.0.6-git"
   },
@@ -134,8 +164,8 @@
     "wires": [
       []
     ],
-    "color": "#808080",
-    "darkColor": "#6A6A6A",
+    "color": "#996F6F",
+    "darkColor": "#905454",
     "module": "node-red-contrib-telegrambot",
     "version": "11.6.0"
   },
@@ -217,8 +247,8 @@
       ],
       []
     ],
-    "color": "#AE9554",
-    "darkColor": "#9E8647",
+    "color": "#6F7F99",
+    "darkColor": "#526788",
     "module": "node-red-contrib-telegrambot",
     "version": "11.6.0"
   },
@@ -236,40 +266,10 @@
     "wires": [
       []
     ],
-    "color": "#adadad",
-    "darkColor": "#808080",
+    "color": "#996F6F",
+    "darkColor": "#905454",
     "module": "node-red-contrib-telegrambot",
     "version": "11.6.0"
-  },
-  {
-    "valid": true,
-    "id": "5196246d86497774",
-    "type": "notion-create-page",
-    "z": "o6uuY9HAzarFwBP4",
-    "name": "Create/Register User",
-    "isProfileConfigNode": false,
-    "url": "https://www.notion.so/a5ab0fcc36eb4e7bb134dbb6bd60962d?v=cfc06e6f3ec948b18448a9dff0a50171",
-    "payloadTypeurl": "str",
-    "parent_type": "database",
-    "properties": "notionPage",
-    "payloadTypeproperties": "msg",
-    "children": "{}",
-    "payloadTypechildren": "json",
-    "icon": "{}",
-    "payloadTypeicon": "json",
-    "cover": "{}",
-    "payloadTypecover": "json",
-    "x": 885,
-    "y": 705,
-    "wires": [
-      [
-        "530f363a790707be"
-      ]
-    ],
-    "color": "#674C80",
-    "darkColor": "#553C6B",
-    "module": "maya-red-notion",
-    "version": "0.0.1"
   },
   {
     "valid": true,
@@ -320,12 +320,12 @@
     "y": 600,
     "wires": [
       [
-        "5196246d86497774",
-        "572781c29e29eea1"
+        "572781c29e29eea1",
+        "ac8ebef63468ba65"
       ]
     ],
-    "color": "#674C80",
-    "darkColor": "#553C6B",
+    "color": "#808080",
+    "darkColor": "#6A6A6A",
     "module": "node-red",
     "version": "2.0.6-git"
   },
@@ -346,8 +346,8 @@
     "x": 885,
     "y": 495,
     "wires": [],
-    "color": "#9F4E2A",
-    "darkColor": "#884324",
+    "color": "#adadad",
+    "darkColor": "#808080",
     "module": "node-red",
     "version": "2.0.6-git"
   },
@@ -368,8 +368,8 @@
     "x": 1155,
     "y": 615,
     "wires": [],
-    "color": "#808080",
-    "darkColor": "#6A6A6A",
+    "color": "#6F7F99",
+    "darkColor": "#526788",
     "module": "node-red",
     "version": "2.0.6-git"
   },
